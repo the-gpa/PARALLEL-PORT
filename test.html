@@ -1,0 +1,91 @@
+
+<!-- FIVE STEPS TO INSTALL WEB SLIDESHOW:
+
+  1.  Open a new page, save it as:  slideshow-left.html
+  2.  Copy the coding into the HEAD of slideshow-left.html
+  3.  Add the onLoad code into the BODY of slideshow-left.html
+  4.  Put the BODY coding into the BODY of slideshow-left.html
+  5.  Save the FRAMESET code as slideshow.html  -->
+
+<!-- STEP ONE: Create a new page, save as:  slideshow-left.html page  -->
+
+<!-- STEP TWO: Save this page as slideshow-left.html page  -->
+
+<HEAD>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Randy Bennett (rbennett@thezone.net) -->
+<!-- Web Site:  http://home.thezone.net/~rbennett/sitemap.htm -->
+<!-- Modified by:  Ronnie T. Moore, Editor -->
+
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://www.javascriptsource.com -->
+
+<!-- Begin
+var repeatshow = 1; // 1 = yes, 0 = no
+var timedelay = 15000; // time in milliseconds, 15000 = `15 secs
+// be sure to allow enough time for each page to load !!!
+
+var page = new Array(
+"web-slideshow-demo1.html",
+"web-slideshow-demo2.html",
+"web-slideshow-demo3.html",
+); // note no comma after last page!
+
+// your "the end" page.  Necessary if repeatshow = 0;
+var endpage = "the-end.html";
+
+var slidenum = 0;
+var slidecount = page.length;
+var timerID = 0;
+var win2;
+function showSlideShow() {
+slidenum++;
+if (slidenum < slidecount+1) {
+parent.main.location.href = page[slidenum-1];
+}
+if (slidenum == slidecount+1) { // if finished
+if (repeatshow) {
+slidenum = 0;
+timerID = setTimeout('showSlideShow()', timedelay)
+}
+else parent.main.location.href = endpage;
+}
+else timerID = setTimeout('showSlideShow()', timedelay);
+}
+//  End -->
+</script>
+</HEAD>
+
+<!-- STEP THREE: Insert the onLoad code in slideshow-left.html  -->
+
+<BODY onLoad="timerID=setTimeout('showSlideShow()',timedelay)">
+
+<!-- STEP FOUR: Copy this code into the BODY of slideshow-left.html  -->
+
+<center>
+<a href="web-slideshow-demo.html" target="main" onClick="clearTimeout(timerID)"><B>MAIN MENU</B></A><br>
+<br>
+<a href="web-slideshow-demo1.html" target="main" onClick="clearTimeout(timerID)">Page One</a><br>
+<a href="web-slideshow-demo2.html" target="main" onClick="clearTimeout(timerID)">Page Two</a><br>
+<a href="web-slideshow-demo4.html" target="main" onClick="clearTimeout(timerID)">Page Three</a><br><br>
+<a href="javascript:showSlideShow();" onClick="clearTimeout(timerID)">Cycle Pages</a><br>
+</center>
+
+<p><center>
+<font face="arial, helvetica" SIZE="-2">Free JavaScripts provided<br>
+by <a href="http://javascriptsource.com">The JavaScript Source</a></font>
+</center><p>
+
+<!-- STEP FIVE: Save this final FRAMESET code into a new page -->
+<!-- Save that page as:  slideshow-left.html page  -->
+
+<html>
+<frameset cols="150,*" border=5>
+<frame src="slideshow-left.html" name="side" sideborder=1 Scrolling="yes"  marginwidth="5" marginheight="5" noresize>
+<frame src="main.html" name="main" sideborder=1 Scrolling="yes"  marginwidth="5" marginheight="5" noresize>
+</frameset>
+</frameset>
+</html>
+
+<!-- Script Size:  2.26 KB -->
